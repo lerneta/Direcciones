@@ -3,5 +3,5 @@ export default {
   MAROON: "#a53860",
   BLUSH: "#da627d",
   LIGTH_PINK: "#ffa5ab",
-  PEACH_PUFF: "#f9dbbd",
+  PEACH_PUFF: "#714955",
 };
