@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { COLORS } from '../constants'
 import { addPlace } from '../store/places.action';
 import ImageSelector from '../components/ImageSelector';
+import LocationPicker from '../components/LocationPicker'
 
 const NewPlaceScreen = ({ navigation }) => {
     const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const NewPlaceScreen = ({ navigation }) => {
                     value={title}
                 />
                 <ImageSelector onImage={onHandlerImage} />
+                <LocationPicker navigation={navigation}/>
                 <View style={styles.footer}>
                     <Button
                         title="Grabar Dirección"
