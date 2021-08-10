@@ -1,11 +1,13 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useEffect } from 'react'
 import { View, Text, FlatList, StyleSheet } from 'react-native'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import HeaderButton from '../components/HeaderButton';
 import PlaceItem from '../components/PlaceItem';
+import { loadPlaces } from '../store/places.action';
 
 const PlaceListScreen = ({ navigation }) => {
+    const dispatch = useDispatch();
     const places = useSelector(state => state.places.places);
 
     useLayoutEffect(() => {
@@ -22,10 +24,14 @@ const PlaceListScreen = ({ navigation }) => {
         });
     }, [navigation]);
 
+    useEffect(() => {
+        dispatch(loadPlaces());
+    }, []);
+
     const renderItem = data => (
         <PlaceItem
             image={data.item.image}
-            address={null}
+            address={data.item.address}
             title={data.item.title}
             onSelect={() => navigation.push('Detalle')}
         />

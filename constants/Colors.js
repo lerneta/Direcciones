@@ -1,7 +1,7 @@
 export default {
-  DARK_SIENNA: "#714955",
+  DARK_SIENNA: "#450920",
   MAROON: "#a53860",
   BLUSH: "#da627d",
   LIGTH_PINK: "#ffa5ab",
-  PEACH_PUFF: "#714955",
+  PEACH_PUFF: "#f9dbbd",
 };
