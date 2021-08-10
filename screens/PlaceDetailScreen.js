@@ -5,17 +5,18 @@ import MapPreview from "../components/MapPreview";
 import { COLORS } from "../constants";
 
 const PlaceDetailScreen = ({ route }) => {
-  console.log(route);
-  const { placeID } = route.params.id;
+  
+  const placeID = route.params.id;
   const place = useSelector((state) =>
     state.places.places.find((place) => place.id === placeID)
   );
+
   return (
     <ScrollView contentContainerStyle={{ alignItems: "center" }}>
       <Image source={{ uri: place.image }} style={styles.image} />
       <View style={styles.location}>
         <View style={styles.addressContainer}>
-          <Text style={styles.address}>{place.addressContainer}</Text>
+          <Text style={styles.address}>{place.address}</Text>
         </View>
         <MapPreview
           style={styles.map}
@@ -54,6 +55,12 @@ const styles = StyleSheet.create({
     color: COLORS.MAROON,
     textAlign: "center",
   },
+  map: {
+    borderColor: COLORS.PEACH_PUFF,
+    marginBottom: 10,
+    height: 150,
+    width: 300,
+  }
 });
 
 export default PlaceDetailScreen;

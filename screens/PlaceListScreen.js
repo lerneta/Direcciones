@@ -33,7 +33,7 @@ const PlaceListScreen = ({ navigation }) => {
             image={data.item.image}
             address={data.item.address}
             title={data.item.title}
-            onSelect={() => navigation.push('Detalle')}
+            onSelect={() => navigation.push('Detalle', { id: data.item.id })}
         />
     )
 
